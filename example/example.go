@@ -17,7 +17,12 @@ func main() {
 		os.Exit(2)
 	}
 	start, end := importGraph(file)
-	fmt.Printf("Shortest path has length %v\n", graph.FindPath(start))
+	length := graph.FindPath(start)
+	if length == -1 {
+		fmt.Println("That graph has no path between the endpoints!")
+		return
+	}
+	fmt.Printf("Shortest path has length %v\n", length)
 	for cur := graph.Node(end); !cur.IsStart(); cur = cur.Prev() {
 		c, _ := cur.(*node)
 		fmt.Printf("%v <- ", c.name)
