@@ -1,7 +1,7 @@
 package main
 
 import (
-	"bfspath"
+	"github.com/joshlf13/bfspath"
 	"fmt"
 	"os"
 )

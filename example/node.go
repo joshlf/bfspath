@@ -1,6 +1,6 @@
 package main
 
-import "bfspath"
+import "github.com/joshlf13/bfspath"
 
 type next struct {
 	// dist remains constant
