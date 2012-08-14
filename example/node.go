@@ -5,15 +5,15 @@ import "github.com/joshlf13/bfspath"
 type next struct {
 	// dist remains constant
 	dist uint64
-	// counter for graph.FindPath to decrement
+	// counter for bfspath.FindPath to decrement
 	counter uint64
-	node    graph.Node
+	node    bfspath.Node
 }
 
 type node struct {
 	// List of adjacent nodes and distances
 	next     []next
-	previous graph.Node
+	previous bfspath.Node
 	isEnd    bool
 	isStart  bool
 
@@ -23,7 +23,7 @@ type node struct {
 }
 
 func (n *node) Edges() int            { return len(n.next) }
-func (n *node) Next(i int) graph.Node { return n.next[i].node }
+func (n *node) Next(i int) bfspath.Node { return n.next[i].node }
 func (n *node) Dec(i int) bool {
 	if n.next[i].counter > 1 {
 		n.next[i].counter--
@@ -34,9 +34,9 @@ func (n *node) Dec(i int) bool {
 func (n *node) PrevCheck() bool {
 	return n.previous != nil
 }
-func (n *node) PrevSet(m graph.Node) {
+func (n *node) PrevSet(m bfspath.Node) {
 	n.previous = m
 }
-func (n *node) Prev() graph.Node { return n.previous }
+func (n *node) Prev() bfspath.Node { return n.previous }
 func (n *node) IsEnd() bool      { return n.isEnd }
 func (n *node) IsStart() bool    { return n.isStart }
