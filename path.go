@@ -18,16 +18,16 @@ type Node interface {
 	// If the length of the edge
 	// at index i is greater than 1,
 	// decrement it by one and return
-	// false. Else, return true.
+	// false. Else, return true
 	Dec(i int) bool
 
 	// Return whether or not this
 	// node's previous node has
-	// been decided yet.
+	// been decided yet
 	PrevCheck() bool
 
 	// Set this node's previous
-	// node to n.
+	// node to n
 	PrevSet(n Node)
 
 	// Return this node's
@@ -78,16 +78,17 @@ func (l *ll) add(n Node) {
 }
 
 // Takes start and end nodes, and returns
-// path length; return -1 if no path was found.
+// path length; returns -1 if no path was found.
 // Note that begining and ending nodes
 // being the same will cause an infinite loop.
+// 
 // It is an invariant that if every node in
 // the graph is of the same type when FindPath
 // is called, no new types will be added.
-// Most importantly, any type assertions which
-// would have been guaranted to succeed before
-// FindPath retain the guarantee after FindPath
-// is called.
+// Most importantly, this means that any 
+// type assertions which would have been 
+// guaranted to succeed before FindPath 
+// retain the guarantee after FindPath is called.
 func FindPath(start Node) int {
 	// Set start's previous pointer
 	// because nil is a sentinal value.
