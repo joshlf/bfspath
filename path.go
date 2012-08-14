@@ -1,10 +1,10 @@
-// The graph package implements a breadth-first-search-based pathfinding 
+// The bfspath package implements a breadth-first-search-based pathfinding 
 // algorithm which runs faster than Dijkstra's algorithm in certain cases.
 // This algorithm assumes that all edges have integral length. (Note that 
 // this should never provide accuracy issues. For a graph in which distances 
 // are stored as uint64, it is possible to measure edge-lengths up to 145
 // trillion miles while maintaining accuracy of one inch.)
-package graph
+package bfspath
 
 type Node interface {
 	// Returns the number of edges
