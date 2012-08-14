@@ -77,6 +77,19 @@ func (l *ll) add(n Node) {
 	}
 }
 
+
+/*
+	As specified in the documentation below,
+	calling FindPath on a graph in which the
+	start and end nodes are the same will cause
+	an infinite loop. This problem is easily
+	avoidable using a simple call to IsEnd().
+	However, allowing for such behavior would
+	put the burden on the user to make sure that
+	when traversing their graph, they don't
+	throw THEMSELVES into an infinite loop.
+	Thus, we omit this behavior.
+*/
 // Takes start and end nodes, and returns
 // path length; returns -1 if no path was found.
 // Note that begining and ending nodes
