@@ -30,15 +30,6 @@ type Node interface {
 	// node to n.
 	PrevSet(n Node)
 
-	/*
-		This Prev function is nowhere
-		used in this code. However, most
-		reasonable uses of this package
-		require such functionality on the
-		part of the user, and so this is
-		included to save them the headache
-		of type assertions.
-	*/
 	// Return this node's
 	// previous node
 	Prev() Node
@@ -48,20 +39,20 @@ type Node interface {
 	// destination node
 	IsEnd() bool
 
-	/*
-		This IsStart function is nowhere
-		used in this code. However, most
-		reasonable uses of this package
-		require such functionality on the
-		part of the user, and so this is
-		included to save them the headache
-		of type assertions.
-	*/
 	// Returns whether or not
 	// this node is the
 	// start node
 	IsStart() bool
 }
+/*
+	The Prev and IsStart functions are 
+	nowhere used in this code. However, 
+	most reasonable uses of this package 
+	require such functionality on the 
+	part of the user, and so they are 
+	included to save the user the headache 
+	of type assertions.
+*/
 
 type llNode struct {
 	Node
