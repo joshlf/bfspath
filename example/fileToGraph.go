@@ -58,38 +58,6 @@ func importGraph(rdr io.Reader) (start, end *node) {
 		end = m
 	}
 
-	// 
-	// if len(strs) != 3 {
-	// 	fmt.Println("Malformed definition: expected 3 words per line")
-	// 	os.Exit(6)
-	// }
-	// length, err := strconv.Atoi(strs[2])
-	// if err != nil {
-	// 	fmt.Println("Malformed definition: expected edge length as third item on line")
-	// 	os.Exit(6)
-	// }
-	// if strs[0] == strs[1] {
-	// 	nodes[strs[0]] = new(node)
-	// 	n := nodes[strs[0]]
-	// 	n.isStart = true
-	// 	n.name = strs[0]
-	// 	n.addEdge(n, length)
-	// 	start = n
-	// 	end = n
-	// } else {
-	// 	nodes[strs[0]] = new(node)
-	// 	n := nodes[strs[0]]
-	// 	nodes[strs[1]] = new(node)
-	// 	m := nodes[strs[1]]
-	// 
-	// 	n.isStart = true
-	// 	n.name = strs[0]
-	// 	m.name = strs[1]
-	// 	n.addEdge(m, length)
-	// 	start = n
-	// 	end = m
-	// }
-
 	b, ip, err = r.ReadLine()
 	for ; err == nil || err.Error() != "EOF"; b, ip, err = r.ReadLine() {
 		if err != nil {
