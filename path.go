@@ -48,6 +48,7 @@ type Node interface {
 	// start node
 	IsStart() bool
 }
+
 /*
 	The Prev and IsStart functions are 
 	nowhere used in this code. However, 
@@ -80,7 +81,6 @@ func (l *ll) add(n Node) {
 		l.tail = newNode
 	}
 }
-
 
 /*
 	As specified in the documentation below,
