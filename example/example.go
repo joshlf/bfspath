@@ -5,8 +5,8 @@
 package main
 
 import (
-	"github.com/joshlf13/bfspath"
 	"fmt"
+	"github.com/joshlf13/bfspath"
 	"os"
 )
 

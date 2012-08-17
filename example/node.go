@@ -26,7 +26,7 @@ type node struct {
 	name string
 }
 
-func (n *node) Edges() int            { return len(n.next) }
+func (n *node) Edges() int              { return len(n.next) }
 func (n *node) Next(i int) bfspath.Node { return n.next[i].node }
 func (n *node) Dec(i int) bool {
 	if n.next[i].counter > 1 {
@@ -42,5 +42,5 @@ func (n *node) PrevSet(m bfspath.Node) {
 	n.previous = m
 }
 func (n *node) Prev() bfspath.Node { return n.previous }
-func (n *node) IsEnd() bool      { return n.isEnd }
-func (n *node) IsStart() bool    { return n.isStart }
+func (n *node) IsEnd() bool        { return n.isEnd }
+func (n *node) IsStart() bool      { return n.isStart }
