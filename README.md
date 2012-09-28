@@ -29,4 +29,4 @@ Running Time
 
 Like normal BFS traversal, BFS path-finding considers each edge once and each vertex once (edges here refers to "virtual" edges - the edges that would exist if a graph were truly to be converted to quantized unit-length edges). In practice, lists A and B are likely implemented as linked-lists or circular buffers or some other constant-time insertion/removal data structure. Thus, the consideration of each vertex is amortized constant time. This gives us a time complexity, for set E of edges and V of vertices, of O(|E| + |V|). Not counting the graph itself, up to |V| vertices must be in a list at any given time, giving a space complexity of O(|V|).
 
-By comparison, Wikipedia lists Dijkstra's worst-case running time as O(|E| + |V|log(|V|)) for a graph with E edges and V vertices.
+By comparison, Wikipedia lists Dijkstra's worst-case running time as O(|E| + |V| log(|V|)) for a graph with E edges and V vertices.
