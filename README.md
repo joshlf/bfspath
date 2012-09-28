@@ -27,6 +27,8 @@ Once the destination vertex is found, the algorithm is finished.
 Running Time
 ============
 
+Like normal BFS traversal, BFS path-finding considers each edge once and each vertex once (edges here refers to "virtual" edges - the edges that would exist if a graph were truly to be converted to quantized unit-length edges). In practice, lists A and B are likely implemented as linked-lists or circular buffers or some other constant-time insertion/removal data structure. Thus, the consideration of each vertex is amortized constant time. This gives us a time complexity, for set E of edges and V of vertices, of O(|E| + |V|). Not counting the graph itself, up to |V| vertices must be in a list at any given time, giving a space complexity of O(|V|).
+
 Each edge length of 1 is considered a single time.  Edges of length n are considered N times.  Thus, for an average edge-length of N and E edges, the number of edge considerations is E*N.
 
 Each edge consideration is constant time, as it involves all constant-time operations (variable setting, comparison, linked-list insertion, etc)
