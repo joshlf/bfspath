@@ -7,7 +7,7 @@ A breadth-first-search-based alternative to Dijkstra's algorithm with better run
 Overview
 ========
 
-Dijkstra's pathfinding algorithm takes the approach of, at every point, prioritizing building up information about the current shortest path.  Thus, since the shortest path is always the one being considered, when the destination is reached, it is guaranteed that the path used to find it is the shortest one.  This is particularly useful on graphs with varying edge-lengths.  However, this requires keeping track of a large amount of information relating to each vertex and path, often in data structures with non-constant insertion and removal such as priority queues.
+Dijkstra's pathfinding algorithm takes the approach of, at every point, prioritizing building up information about the current shortest path.  Thus, since the shortest path is always the one being considered, when the destination is reached, it is guaranteed that the path used to find it is the shortest one.  This is particularly useful on graphs with varying edge-lengths.  However, this requires keeping track of a large amount of information relating to each vertex and path, in data structures with non-constant insertion or removal such as priority queues.
 
 The approach of this algorithm is to mutate graphs with varying edge-lengths into ones in which each edge is considered to be of some unit length.  This allows the algorithm to take advantage of the property of breadth-first-search (BFS) that "levels" of a graph are visited in increasing order.  That is, first vertices which are one edge away from the start, then two, then three, etc.  In a graph in which each edge length is the same, the first path to reach the destination must be the shortest one (and has a distance equal to the number of layers of BFS performed).
 
@@ -29,10 +29,4 @@ Running Time
 
 Like normal BFS traversal, BFS path-finding considers each edge once and each vertex once (edges here refers to "virtual" edges - the edges that would exist if a graph were truly to be converted to quantized unit-length edges). In practice, lists A and B are likely implemented as linked-lists or circular buffers or some other constant-time insertion/removal data structure. Thus, the consideration of each vertex is amortized constant time. This gives us a time complexity, for set E of edges and V of vertices, of O(|E| + |V|). Not counting the graph itself, up to |V| vertices must be in a list at any given time, giving a space complexity of O(|V|).
 
-Each edge length of 1 is considered a single time.  Edges of length n are considered N times.  Thus, for an average edge-length of N and E edges, the number of edge considerations is E*N.
-
-Each edge consideration is constant time, as it involves all constant-time operations (variable setting, comparison, linked-list insertion, etc)
-
-Thus, total running time comes to O(E)
-
-By comparison, wikipedia lists Dijkstra's worst-case running time as O(E + Vlog(V)) for a graph with E edges and V vertices.
+By comparison, Wikipedia lists Dijkstra's worst-case running time as O(|E| + |V|log(|V|)) for a graph with E edges and V vertices.
