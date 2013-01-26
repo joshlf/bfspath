@@ -9,3 +9,7 @@ This folder contains an example implementation of a bfspath.Node type, and const
 &lt;head node&gt; &lt;tail node&gt; &lt;edge length&gt;<br>
 
 ...etc
+
+###Use
+
+To use, remove the "_test.go" extension before building (the suffix prevents the "go get" command from installing this example directory).
